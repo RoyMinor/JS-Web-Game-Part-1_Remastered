@@ -1,0 +1,14 @@
+body, html {
+    margin: 0; /* removes default margin around content */
+    height: 100%; /* full height  for body and html*/
+}
+
+.game-container {
+    position: relative; /* Allows absolute positioning of the child elements */
+    width: 100%; /* Full width for game container */
+    height: 100vh; /* Full height for viewport */
+    background-image: url('assets/sky.png'), url('assets/grass.png'); /* Background images */
+    background-size: 100% 50%; /* Sky covers the entire container, grass keeps its original size */
+    background-position: top center, bottom center; /* Position sky at the top, grass at the bottom */
+    background-repeat: no-repeat; /* Prevents the images from repeating */
+}
