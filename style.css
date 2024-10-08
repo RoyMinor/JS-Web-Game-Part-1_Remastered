@@ -4,11 +4,24 @@ body, html {
 }
 
 .game-container {
-    position: relative; /* Allows absolute positioning of the child elements */
+    position: absolute; /* Allows absolute positioning of the child elements */
+    z-index: 0;
     width: 100%; /* Full width for game container */
     height: 100vh; /* Full height for viewport */
     background-image: url('assets/grass.png'), url('assets/sky.png'); /* Background images */
     background-size: 100% 65%; /* Sky covers the entire container, grass keeps its original size */
     background-position: center bottom, top center; /* Position sky at the top, grass at the bottom */
     background-repeat: no-repeat; /* Prevents the images from repeating */
+}
+
+.character {
+    position: absolute; /* Allows absolute positioning of the character */
+    width: 50px; /* Character width */
+    height: 50px; /* Character height */
+    /* Character image */
+    background-size: cover; /* Character image covers the entire container */
+    background-position: center; /* Character image is centered */
+    top: 50%; /* Character is positioned at the center of the container vertically */
+    left: 50%; /* Character is positioned at the center of the container horizontally */
+    transform: translate(-50%, -50%); /* Moves the character to its original position */
 }
