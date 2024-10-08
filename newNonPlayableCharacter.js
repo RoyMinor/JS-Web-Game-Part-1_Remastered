@@ -5,51 +5,74 @@ function newNonPlayableCharacter(x, y) {
    let direction = null;
 
    function moveCharacter() {
-     if (direction === 'west') {
-       x -= 1;
-     } else if (direction === 'east') {
-       x += 1;
-     } else if (direction === 'north') {
-       y -= 1;
-     } else if (direction ==='south') {
-       y += 1;
-     }
-
-     element.style.left = x + 'px';
-     element.style.bottom = y + 'px';
-   }
-
+    if (direction === 'west') {
+        x -= 1
+    }
+    if (direction === 'north') {
+        y += 1
+    }
+    if (direction === 'east') {
+        x += 1
+    }
+    if (direction === 'south') {
+        y -= 1
+    }
+    element.style.left = x + 'px'
+    element.style.bottom = y + 'px'
+}
    setInterval(moveCharacter, 1);
 
-   function walkEast(time, callback) {
-    direction = 'east';
-    element.src = 'assets/red-character/east.gif';
-    setTimeout(() => {
-        stop()
-        if (callback) {
-            callback();
-        }
-    }, time)
-   }
-
-   function walkNorth() {
+   function walkEast(time) {
     direction = 'north';
-    element.src = 'assets/red-character/north.gif';
+    element.src = 'assets/red-character.gif';
+     return new Promise((resolve) => {
+      console.log('Character is walking east');
+       setTimeout(() => {
+         console.log('Character has stopped walking east');
+         resolve();
+       }, time);
+     })
    }
 
-   function walkWest() {
+   function walkNorth(time) {
+    direction = 'north';
+    element.src = 'assets/red-character.gif';
+    return new Promise((resolve) => {
+      console.log('Character is walking north');
+       setTimeout(() => {
+         console.log('Character has stopped walking north');
+         resolve();
+       }, time);
+    })
+   }
+
+   function walkWest(time) {
     direction = 'west';
-    element.src = 'assets/red-character/west.gif';
+    element.src = 'assets/red-character.gif';
+    return new Promise((resolve) => {
+      console.log('Character is walking west');
+       setTimeout(() => {
+         console.log('Character has stopped walking west');
+         resolve();
+       }, time);
+    })
    }
 
-   function walkSouth() {
+   function walkSouth(time) {
     direction ='south';
-    element.src = 'assets/red-character/south.gif';
+    element.src = 'assets/red-character.gif';
+    return new Promise((resolve) => {
+      console.log('Character is walking south');
+       setTimeout(() => {
+         console.log('Character has stopped walking south');
+         resolve();
+       }, time);
+    })
    }
 
    function stop() {
     direction = null;
-    element.src = 'assets/red-character/static.gif';
+    element.src = 'assets/red-character.gif';
    }
 
    return {
