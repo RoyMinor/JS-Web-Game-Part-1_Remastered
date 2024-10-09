@@ -23,56 +23,39 @@ function newNonPlayableCharacter(x, y) {
    setInterval(moveCharacter, 10);
 
    async function walkEast(time) {
-    console.log('walking east');
-    element.src = 'assets/red-character.gif';
+    // console.log('walking east');
     direction = 'east';
+    // element.src = 'assets/red-character.gif';
     await sleep(time);
     stop()
-    console.log('stopping walking') 
-    element.src = 'assets/red-character.gif';
-    //  return new Promise((resolve) => {
-    //   console.log('Character is walking east');
-    //    setTimeout(() => {
-    //      console.log('Character has stopped walking east');
-    //      resolve();
-    //    }, time);
-    //  })
+    // console.log('stop walking') 
    }
 
-   function walkNorth(time) {
+   async function walkNorth(time) {
+    // console.log('walking north');
     direction = 'north';
-    element.src = 'assets/red-character.gif';
-    return new Promise((resolve) => {
-      console.log('Character is walking north');
-       setTimeout(() => {
-         console.log('Character has stopped walking north');
-         resolve();
-       }, time);
-    })
+    // element.src = 'assets/red-character.gif';
+    await sleep(time);
+    stop();
+    // console.log('Stop walking')
    }
 
-   function walkWest(time) {
+   async function walkWest(time) {
+    // console.log('walking west');
     direction = 'west';
-    element.src = 'assets/red-character.gif';
-    return new Promise((resolve) => {
-      console.log('Character is walking west');
-       setTimeout(() => {
-         console.log('Character has stopped walking west');
-         resolve();
-       }, time);
-    })
+    // element.src = 'assets/red-character.gif';
+    await sleep(time);
+    stop();
+    // console.log('Stop walking')
    }
 
-   function walkSouth(time) {
+   async function walkSouth(time) {
+    // console.log('walking south');
     direction ='south';
-    element.src = 'assets/red-character.gif';
-    return new Promise((resolve) => {
-      console.log('Character is walking south');
-       setTimeout(() => {
-         console.log('Character has stopped walking south');
-         resolve();
-       }, time);
-    })
+    // element.src = 'assets/red-character.gif';
+    await sleep(time);
+    stop();
+    // console.log('Stop walking')
    }
 
    function stop() {
@@ -85,6 +68,16 @@ function newNonPlayableCharacter(x, y) {
       setTimeout(resolve, time);
     })
    }
+
+   async function loopMovement() {
+    while (true) {
+      await walkEast(1000);
+      await walkNorth(1000);
+      await walkWest(1000);
+      await walkSouth(1000);
+    }
+   }
+   loopMovement();
 
    return {
     element: element,

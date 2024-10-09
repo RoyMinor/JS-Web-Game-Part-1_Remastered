@@ -30,6 +30,9 @@ function move(element) {
             if (direction === 'south') {
                 y -= 1;
             }
+
+            // Check if character is out of bounds
+
             // Update position
             element.style.left = x + 'px';
             element.style.bottom = y + 'px';
