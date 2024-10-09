@@ -2,16 +2,16 @@
 const pc = newPlayableCharacter(100, 110)
 
 // Create non-playable character
-const npc = newNonPlayableCharacter(300, 300)
+const npc = newNonPlayableCharacter(50, 200)
 
 // Move playable character
-npc.walkNorth(1400)
-    .then(() => npc.walkEast(200))
-    .then(() => npc.walkSouth(300))
-    .then(() => npc.walkEast(500))
-    .then(() => npc.walkSouth(1500))
-    .then(() => npc.walkWest(500))
-    .then(() => npc.walkNorth(400))
+npc.walkEast(6000)
+    // .then(() => npc.walkEast(200))
+    // .then(() => npc.walkSouth(300))
+    // .then(() => npc.walkEast(500))
+    // .then(() => npc.walkSouth(500))
+    // .then(() => npc.walkWest(500))
+    // .then(() => npc.walkNorth(400))
 
 // Create inventory
 const inventory = newInventory()

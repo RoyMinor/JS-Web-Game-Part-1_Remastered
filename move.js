@@ -3,6 +3,7 @@ function move(element) {
     // Initial z-index
     element.style.zIndex = 1; 
 
+    
     function moveToCoordinates(left, bottom) {
         element.style.left = left + 'px';
         element.style.bottom = bottom + 'px';
@@ -72,5 +73,3 @@ function move(element) {
     }
 
 }
-
-
